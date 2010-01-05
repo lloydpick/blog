@@ -38,9 +38,9 @@
           <h3>Visit my friends!</h3>
           <p>A few highly recommended friends...</p>
           <ul>
-            <%# Link.find(:all, :order => :name).each do |link| %>
-              <li><%#= link_to link.name, link.url %></li>
-            <%# end %>
+            <% Link.find(:all, :order => :name).each do |link| %>
+              <li><%= link_to link.name, link.url %></li>
+            <% end %>
           </ul>
         </div>
         <div class="col3">

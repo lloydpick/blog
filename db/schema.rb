@@ -9,7 +9,44 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090331233533) do
+ActiveRecord::Schema.define(:version => 20090422233019) do
+
+  create_table "categories", :force => true do |t|
+    t.integer  "parent_id",                  :default => 0
+    t.string   "name",        :limit => 50
+    t.string   "permalink",   :limit => 50
+    t.string   "description", :limit => 300
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "category_entries", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "post_id"
+    t.string   "author"
+    t.string   "user_ip"
+    t.string   "author_url"
+    t.string   "author_email"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "deleted_at"
+    t.string   "user_agent",   :limit => 500
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "name",       :limit => 50
+    t.string   "url",        :limit => 100
+    t.datetime "deleted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "user_id"
@@ -18,6 +55,21 @@ ActiveRecord::Schema.define(:version => 20090331233533) do
     t.datetime "publish_at"
     t.string   "content"
     t.string   "content_parsed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tag_entries", :force => true do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name",        :limit => 50
+    t.string   "permalink",   :limit => 50
+    t.string   "description", :limit => 300
     t.datetime "created_at"
     t.datetime "updated_at"
   end
