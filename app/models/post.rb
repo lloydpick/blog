@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
   acts_as_slugable :source_column => :title, :slug_column => :permalink
 
   # Validations
-  validates_presence_of :title, :permalink, :content
+  validates_presence_of :title, :content
   validates_uniqueness_of :title, :permalink
 
   # Named Scopes

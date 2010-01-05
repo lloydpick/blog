@@ -10,4 +10,12 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  def set_title(title)
+    @title = title
+  end
+
+  def month_name_from_number(num)
+    Date::MONTHNAMES[num.to_i] if num
+  end
 end
