@@ -1,0 +1,25 @@
+<div id="sidebars">
+  <div id="sidebar_full">
+    <ul>
+      <li>Welcome to the blog of a Ruby on Rails programmer!</li>
+      <li>
+        <%= render :partial => "layouts/blocks/recent_posts", :locals => { :posts => Post.published.limit(10) } %>
+      </li>
+    </ul>
+  </div>
+  <div id="sidebar_left">
+    <ul>
+      <li>
+        <%#= render :partial => "layouts/blocks/categories", :locals => { :categories => Category.root } %>
+      </li>
+    </ul>
+  </div>
+  <div id="sidebar_right">
+    <ul>
+      <li>
+        <%= render :partial => "layouts/blocks/meta" %>
+      </li>
+    </ul>
+  </div>
+  <div class="cleared"></div>
+</div>
