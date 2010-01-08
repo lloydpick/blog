@@ -1,0 +1,8 @@
+<div class="sidebarbox">
+  <h2>Recent Comments</h2>
+    <ul>
+      <% comments.each do |comment| %>
+      <li><%= link_to("\"<i>#{comment.content}</i>\"", post_path(comment.post)) %></li>
+      <% end %>
+    </ul>
+</div>

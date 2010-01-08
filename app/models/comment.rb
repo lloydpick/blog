@@ -23,5 +23,8 @@ class Comment < ActiveRecord::Base
 
   named_scope :active, :conditions => [ "deleted_at IS NULL" ]
   named_scope :order, :order => "created_at DESC"
-
+  named_scope :limit, lambda {
+    |num| { :limit => num }
+  }
+  
 end
