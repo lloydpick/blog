@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !limi\.co\.uk$
+RewriteRUle ^(.*)$ http://limi.co.uk/$1 [R=301,L]
