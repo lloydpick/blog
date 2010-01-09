@@ -21,7 +21,7 @@ class Category < ActiveRecord::Base
   has_many :posts, :through => :category_entry
 
   # Validations
-  validates_presence_of :name, :permalink, :description
+  validates_presence_of :name, :description
   validates_uniqueness_of :name, :permalink
 
   named_scope :root, :conditions => { :parent_id => 0 }
