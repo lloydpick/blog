@@ -1,5 +1,6 @@
 <div id="contentwrapper">
   <%= render :partial => @current_objects %>
+  <%= will_paginate @current_objects %>
 </div>
 <%= render :partial => "layouts/blocks/standard" %>
 <div class="cleared"></div>

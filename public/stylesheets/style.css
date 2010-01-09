@@ -802,5 +802,7 @@ img.aligncenter {
   color: #111;
   }
 
-
-
+div.pagination span
+{
+    color: white;
+}
