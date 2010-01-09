@@ -15,7 +15,7 @@ class Admin::ApplicationController < ActionController::Base
   private
   def authenticate
     authenticate_or_request_with_http_basic do |id, password|
-        id == 'limi' && password == 'password'
+        id == USERNAME && password == PASSWORD
     end
   end
 
