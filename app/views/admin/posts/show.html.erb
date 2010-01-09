@@ -8,38 +8,29 @@
   </div>          
   <div class="content">
     <div class="inner">
-      
-        <p>
-          <b><%= t("activerecord.attributes.admin_post.user_id", :default => t("activerecord.labels.user_id", :default => "User")) %>:</b>
-          <%= @post.user_id %>
-        </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.admin_post.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
-          <%= @post.title %>
-        </p>
+      <p>
+        <b><%= t("activerecord.attributes.admin_post.title", :default => t("activerecord.labels.title", :default => "Title")) %>:</b>
+        <%= @post.title %>
+      </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.admin_post.permalink", :default => t("activerecord.labels.permalink", :default => "Permalink")) %>:</b>
-          <%= @post.permalink %>
-        </p>
+      <p>
+        <b><%= t("activerecord.attributes.admin_post.permalink", :default => t("activerecord.labels.permalink", :default => "Permalink")) %>:</b>
+        <%= @post.permalink %>
+      </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.admin_post.publish_at", :default => t("activerecord.labels.publish_at", :default => "Publish at")) %>:</b>
-          <%= @post.publish_at %>
-        </p>
+      <p>
+        <b><%= t("activerecord.attributes.admin_post.publish_at", :default => t("activerecord.labels.publish_at", :default => "Publish at")) %>:</b>
+        <%= @post.publish_at %>
+      </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.admin_post.content", :default => t("activerecord.labels.content", :default => "Content")) %>:</b>
-          <%= @post.content %>
-        </p>
+      <p>
+        <b><%= t("activerecord.attributes.admin_post.content", :default => t("activerecord.labels.content", :default => "Content")) %>:</b>
+        <%= @post.content %>
+      </p>
 
-        <p>
-          <b><%= t("activerecord.attributes.admin_post.content_parsed", :default => t("activerecord.labels.content_parsed", :default => "Content parsed")) %>:</b>
-          <%= @post.content_parsed %>
-        </p>
-      <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_admin_post_path(@post), :class => "button" %> 
-      <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", admin_post_path(@post), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>       
+      <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_admin_post_path(@post), :class => "button" %>
+      <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", admin_post_path(@post), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
     </div>
   </div>
 </div>
