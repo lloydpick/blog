@@ -6,7 +6,7 @@
         <%= render :partial => "layouts/blocks/recent_posts", :locals => { :posts => Post.published.limit(10) } %>
       </li>
       <li>
-        <%= render :partial => "layouts/blocks/recent_comments", :locals => { :comments => Comment.active.limit(10) } %>
+        <%= render :partial => "layouts/blocks/recent_comments", :locals => { :comments => Comment.active.limit(10).order } %>
       </li>
       <li>
         <%= render :partial => "layouts/blocks/categories", :locals => { :categories => Category.root } %>
