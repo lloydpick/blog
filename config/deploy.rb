@@ -4,7 +4,7 @@ set :scm_verbose, true
 set :deploy_via, :remote_cache
 set :repository, "git@github.com:lloydpick/blog.git"
 set :scm, :git
-set :local_shared_files, %w(config/database.yml)
+set :local_shared_files, %w(config/database.yml config/initializers/authentication.rb)
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty] = true
