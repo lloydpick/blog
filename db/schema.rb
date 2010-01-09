@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100109154603) do
+ActiveRecord::Schema.define(:version => 20100109174225) do
 
   create_table "categories", :force => true do |t|
     t.integer  "parent_id",                  :default => 0
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(:version => 20100109154603) do
     t.string   "title",      :limit => 250
     t.string   "permalink",  :limit => 250
     t.datetime "publish_at"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
