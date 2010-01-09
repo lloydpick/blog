@@ -1,0 +1,56 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admin_links_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_link_path %></li>
+    </ul>
+  </div>          
+  <div class="content">          
+    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Links</h2>
+    <div class="inner">
+      <table class="table">
+        <tr>             
+          <th class="first">ID</th>
+          <th>
+            <%= t("activerecord.attributes.admin_link.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+          </th>
+          <th>
+            <%= t("activerecord.attributes.admin_link.url", :default => t("activerecord.labels.url", :default => "URL")) %>
+          </th>
+          <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @links.each do |link| -%>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td>
+              <%= link.id %>
+            </td>
+            <td>
+              <%= link_to link.name, admin_link_path(link) %>
+            </td>
+            <td>
+              <%= link_to link.url, link.url %>
+            </td>
+            <td>
+              <%= link.created_at %>
+            </td>
+            <td class="last">
+              <%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_link_path(link) %> |
+              <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_admin_link_path(link) %> |
+              <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", admin_link_path(link), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            </td>
+          </tr>
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+
+        <%= will_paginate @links  %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
