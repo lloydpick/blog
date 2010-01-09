@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :posts
     admin.resources :categories
     admin.resources :comments
+    admin.resources :links
   end
   
   # Needed for pingbacks
