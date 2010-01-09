@@ -8,19 +8,8 @@
       <li>
         <%= render :partial => "layouts/blocks/recent_comments", :locals => { :comments => Comment.active.limit(10) } %>
       </li>
-    </ul>
-  </div>
-  <div id="sidebar_left">
-    <ul>
       <li>
         <%= render :partial => "layouts/blocks/categories", :locals => { :categories => Category.root } %>
-      </li>
-    </ul>
-  </div>
-  <div id="sidebar_right">
-    <ul>
-      <li>
-        <%= render :partial => "layouts/blocks/meta" %>
       </li>
     </ul>
   </div>
