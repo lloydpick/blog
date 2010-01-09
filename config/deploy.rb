@@ -1,3 +1,7 @@
+gem 'brightbox', '>=2.3.5'
+require 'brightbox/recipes'
+require 'brightbox/passenger'
+
 set :application, "blog"
 set :keep_releases, 5
 set :scm_verbose, true
@@ -18,7 +22,7 @@ set :domain_aliases, 'www.limi.co.uk,blog.limi.co.uk'
 set :user, "limi"
 server "andromeda.limi.co.uk", :app, :web, :db, :primary => true
 
-set(:deploy_to) { File.join("", "home", "limi", "domains", "limi.co.uk", stage.to_s) }
+set(:deploy_to) { File.join("", "home", "limi", "domains", "blog.limi.co.uk") }
 
 namespace :db do
   desc 'Dumps the production database to db/production_data.sql on the remote server'
@@ -50,13 +54,5 @@ namespace :db do
     remote_db_dump
     remote_db_download
     remote_db_cleanup
-  end
-end
-
-namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
