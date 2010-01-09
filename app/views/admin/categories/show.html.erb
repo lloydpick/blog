@@ -1,0 +1,37 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admin_categories_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_category_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_category_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.admin_category.parent_id", :default => t("activerecord.labels.parent_id", :default => "Parent")) %>:</b>
+          <%= @category.parent_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_category.name", :default => t("activerecord.labels.name", :default => "Name")) %>:</b>
+          <%= @category.name %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_category.permalink", :default => t("activerecord.labels.permalink", :default => "Permalink")) %>:</b>
+          <%= @category.permalink %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_category.description", :default => t("activerecord.labels.description", :default => "Description")) %>:</b>
+          <%= @category.description %>
+        </p>
+      <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_admin_category_path(@category), :class => "button" %> 
+      <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", admin_category_path(@category), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>       
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

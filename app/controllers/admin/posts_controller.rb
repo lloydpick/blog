@@ -1,0 +1,19 @@
+class Admin::PostsController < Admin::ApplicationController
+
+  uses_tiny_mce :only => [:new, :create, :edit, :update]
+
+  make_resourceful do
+    actions :all
+  end
+
+  private
+
+  def current_object
+    @current_object ||= current_model.find_by_permalink(params[:id])
+  end
+
+  def current_objects
+    @current_objects ||= current_model.paginate(:all, :per_page => 20, :page => params[:page], :order => 'created_at DESC')
+  end
+
+end

@@ -1,0 +1,57 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admin_comments_path  %></li>
+      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_comment_path %></li>
+      <li class="active"><%= link_to "#{t("web-app-theme.show", :default => "Show")}", admin_comment_path %></li>
+    </ul>
+  </div>          
+  <div class="content">
+    <div class="inner">
+      
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.post_id", :default => t("activerecord.labels.post_id", :default => "Post")) %>:</b>
+          <%= @comment.post_id %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.author", :default => t("activerecord.labels.author", :default => "Author")) %>:</b>
+          <%= @comment.author %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.user_ip", :default => t("activerecord.labels.user_ip", :default => "User ip")) %>:</b>
+          <%= @comment.user_ip %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.author_url", :default => t("activerecord.labels.author_url", :default => "Author url")) %>:</b>
+          <%= @comment.author_url %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.author_email", :default => t("activerecord.labels.author_email", :default => "Author email")) %>:</b>
+          <%= @comment.author_email %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.content", :default => t("activerecord.labels.content", :default => "Content")) %>:</b>
+          <%= @comment.content %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.deleted_at", :default => t("activerecord.labels.deleted_at", :default => "Deleted at")) %>:</b>
+          <%= @comment.deleted_at %>
+        </p>
+
+        <p>
+          <b><%= t("activerecord.attributes.admin_comment.user_agent", :default => t("activerecord.labels.user_agent", :default => "User agent")) %>:</b>
+          <%= @comment.user_agent %>
+        </p>
+      <%= link_to "#{image_tag("web-app-theme/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}")} #{t("web-app-theme.edit", :default=> "Edit")}", edit_admin_comment_path(@comment), :class => "button" %> 
+      <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}")} #{t("web-app-theme.delete", :default => "Delete")}", admin_comment_path(@comment), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>       
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>

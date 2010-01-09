@@ -1,0 +1,38 @@
+  <div class="group">
+    <%= f.label :Title, t("activerecord.attributes.post.title", :default => "Title"), :class => :label %>
+    <%= f.text_field :title, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Permalink, t("activerecord.attributes.post.permalink", :default => "Permalink"), :class => :label %>
+    <%= f.text_field :permalink, :class => 'text_field' %>
+    <span class="description">Can be adjusted, but is auto generated</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Publish_at, t("activerecord.attributes.post.publish_at", :default => "Publish at"), :class => :label %>
+    <%= f.datetime_select :publish_at, :class => 'datetime_select' %>
+    <span class="description">When do you want this post to appear?</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Categories, t("activerecord.attributes.post.category_id", :default => "Categories"), :class => :label %>
+    <% for category in Category.find(:all) %>
+      <%= check_box_tag "post[category_ids][]", category.id, @post.categories.include?(category) %>
+      <%= category.name %>
+    <% end %>
+  </div>
+
+  <div class="group">
+    <%= f.label :Content, t("activerecord.attributes.post.content", :default => "Content"), :class => :label %>
+    <%= f.text_area :content, :class => 'text_area mceEditor' %>
+    <span class="description">Put the copy for your blog post here!</span>
+  </div>
+        
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>  
+  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", admin_posts_path, :class => "button" %> 
+</div>

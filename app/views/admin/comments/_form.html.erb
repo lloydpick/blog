@@ -1,0 +1,48 @@
+  <div class="group">
+    <%= f.label :Author, t("activerecord.attributes.comment.author", :default => "Author"), :class => :label %>
+    <%= f.text_field :author, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :User_Ip, t("activerecord.attributes.comment.user_ip", :default => "User ip"), :class => :label %>
+    <%= f.text_field :user_ip, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Author_url, t("activerecord.attributes.comment.author_url", :default => "Author url"), :class => :label %>
+    <%= f.text_field :author_url, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Author_email, t("activerecord.attributes.comment.author_email", :default => "Author email"), :class => :label %>
+    <%= f.text_field :author_email, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Content, t("activerecord.attributes.comment.content", :default => "Content"), :class => :label %>
+    <%= f.text_field :content, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :Deleted_at, t("activerecord.attributes.comment.deleted_at", :default => "Deleted at"), :class => :label %>
+    <%= f.datetime_select :deleted_at, :class => 'datetime_select' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+
+  <div class="group">
+    <%= f.label :User_agent, t("activerecord.attributes.comment.user_agent", :default => "User agent"), :class => :label %>
+    <%= f.text_field :user_agent, :class => 'text_field' %>
+    <span class="description">Ex: a simple text</span>
+  </div>
+        
+<div class="group navform wat-cf">
+  <button class="button" type="submit">
+    <%= image_tag("web-app-theme/tick.png", :alt => "#{t("web-app-theme.save", :default => "Save")}") %> <%= t("web-app-theme.save", :default => "Save") %>
+  </button>  
+  <%= link_to "#{image_tag("web-app-theme/cross.png", :alt => "#{t("web-app-theme.cancel", :default => "Cancel")}")} #{t("web-app-theme.cancel", :default => "Cancel")}", admin_comments_path, :class => "button" %> 
+</div>
