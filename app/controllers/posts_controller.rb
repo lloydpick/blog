@@ -11,7 +11,7 @@ class PostsController < ApplicationController
       format.html
       format.xml
       format.json
-      format.atom
+      format.atom { @current_objects = current_model.published.limit(20)}
     end
   end
 
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def current_objects
-    @current_objects ||= current_model.published.paginate(:all, :per_page => 20, :page => params[:page], :order => 'created_at DESC')
+    @current_objects ||= current_model.published.paginate(:all, :per_page => 3, :page => params[:page])
   end
 
   protected
