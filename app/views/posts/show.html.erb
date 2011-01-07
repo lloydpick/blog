@@ -1,5 +1,5 @@
 <div id="contentwrapper">
-  <%= render :partial => "post" %>
+  <%= render :partial => "post", :locals => { :post => current_object } %>
 </div>
 <%= render :partial => "layouts/blocks/post" %>
 <div class="cleared"></div>
