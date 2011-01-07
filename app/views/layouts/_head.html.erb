@@ -6,7 +6,7 @@
   <%= javascript_include_tag :all %>
   <%= stylesheet_link_tag("style") %>
   <%= csrf_meta_tag %>
-  <%#= pingback_link_tag %>
+  <%= pingback_link_tag.html_safe %>
 
   <script type="text/javascript">
     <!--//--><![CDATA[//><!--

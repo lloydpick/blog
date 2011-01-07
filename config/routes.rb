@@ -75,4 +75,6 @@ Blog::Application.routes.draw do
     resources :links
   end
 
+  match ':controller(/:action(/:id(.:format)))'
+
 end
