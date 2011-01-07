@@ -28,7 +28,7 @@ class Comment < ActiveRecord::Base
 
   scope :not_spam, :conditions => { :spam => false }
   scope :active, :conditions => [ "deleted_at IS NULL" ]
-  scope :order, :order => "created_at DESC"
+  scope :order, :order => "created_at ASC"
   scope :limit, lambda {
     |num| { :limit => num }
   }
