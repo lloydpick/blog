@@ -3,7 +3,7 @@
   <p><a href="#" onclick="Effect.BlindDown('comment_form'); return false;">Post a comment of your own...</a></p>
   <div id="comment_form" style="display: none">
     <br />
-    <%= remote_form_for [@post, Comment.new] do |f| %>
+    <%= form_for([@post, Comment.new], :remote => true) do |f| %>
       <p>
         <%= f.label :author, "Nickname" %><br />
         <%= f.text_field :author %>
