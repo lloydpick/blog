@@ -64,20 +64,15 @@ Blog::Application.routes.draw do
 
   resources :categories
 
-  match 'products/:id' => 'catalog#view'
-  map.archive_day 'archive/:year/:month/:day', :controller => 'posts', :action => 'archive'
-  map.archive_month 'archive/:year/:month', :controller => 'posts', :action => 'archive'
-  map.archive_year 'archive/:year', :controller => 'posts', :action => 'archive'
+  match 'archive/:year/:month/:day' => 'posts#archive', :as => :archive_day
+  match 'archive/:year/:month' => 'posts#archive', :as => :archive_month
+  match 'archive/:year' => 'posts#archive', :as => :archive_year
 
-  # Admin Routes
-  map.namespace(:admin) do |admin|
-    admin.resources :posts
-    admin.resources :categories
-    admin.resources :comments
-    admin.resources :links
+  namespace :admin do
+    resources :posts
+    resources :categories
+    resources :comments
+    resources :links
   end
-  
-  # Needed for pingbacks
-  map.connect ':controller/:action/:id.:format'
-  
+
 end
