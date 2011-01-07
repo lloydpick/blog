@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
   end
 
   def current_objects
-    @current_objects ||= current_object.posts.published.paginate(:all, :per_page => 20, :page => params[:page], :order => 'created_at DESC')
+    @current_objects ||= current_object.posts.published.paginate(:per_page => 20, :page => params[:page], :order => 'created_at DESC')
   end
 
 end

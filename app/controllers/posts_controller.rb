@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def current_objects
-    @current_objects ||= current_model.published.paginate(:all, :per_page => 3, :page => params[:page])
+    @current_objects ||= current_model.published.paginate(:per_page => 3, :page => params[:page])
   end
 
   protected

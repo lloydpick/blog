@@ -11,7 +11,7 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def current_objects
-    @current_objects ||= current_model.paginate(:all, :per_page => 20, :page => params[:page], :order => 'created_at DESC')
+    @current_objects ||= current_model.all.paginate(:per_page => 20, :page => params[:page], :order => 'created_at DESC')
   end
   
 end
