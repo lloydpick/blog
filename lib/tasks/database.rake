@@ -5,23 +5,23 @@ namespace :db do
   task :database_dump do
     load 'config/environment.rb'
     abcs = ActiveRecord::Base.configurations
-    case abcs[RAILS_ENV]["adapter"]
+    case abcs[Rails.env]["adapter"]
     when 'mysql'
-      ActiveRecord::Base.establish_connection(abcs[RAILS_ENV])
-      File.open("db/#{RAILS_ENV}_data.sql", "w+") do |f|
-        if abcs[RAILS_ENV]["password"].blank?
-          f << `mysqldump -h #{abcs[RAILS_ENV]["host"]} -u #{abcs[RAILS_ENV]["username"]} #{abcs[RAILS_ENV]["database"]}`
+      ActiveRecord::Base.establish_connection(abcs[Rails.env])
+      File.open("db/#{Rails.env}_data.sql", "w+") do |f|
+        if abcs[Rails.env]["password"].blank?
+          f << `mysqldump -h #{abcs[Rails.env]["host"]} -u #{abcs[Rails.env]["username"]} #{abcs[Rails.env]["database"]}`
         else
-          f << `mysqldump -h #{abcs[RAILS_ENV]["host"]} -u #{abcs[RAILS_ENV]["username"]} -p#{abcs[RAILS_ENV]["password"]} #{abcs[RAILS_ENV]["database"]}`
+          f << `mysqldump -h #{abcs[Rails.env]["host"]} -u #{abcs[Rails.env]["username"]} -p#{abcs[Rails.env]["password"]} #{abcs[Rails.env]["database"]}`
         end
       end
     when 'sqlite3'
-      ActiveRecord::Base.establish_connection(abcs[RAILS_ENV])
-      File.open("db/#{RAILS_ENV}_data.sql", "w+") do |f|
-        f << `sqlite3 #{abcs[RAILS_ENV]["database"]} .dump`
+      ActiveRecord::Base.establish_connection(abcs[Rails.env])
+      File.open("db/#{Rails.env}_data.sql", "w+") do |f|
+        f << `sqlite3 #{abcs[Rails.env]["database"]} .dump`
       end
     else
-      raise "Task not supported by '#{abcs[RAILS_ENV]['adapter']}'"
+      raise "Task not supported by '#{abcs[Rails.env]['adapter']}'"
     end
   end
 end
