@@ -1,3 +1,4 @@
-Rakismet::KEY  = ''
-Rakismet::URL  = ''
-Rakismet::HOST = 'rest.akismet.com'
+Blog::Application.configure do
+  config.rakismet.key = ''
+  config.rakismet.url = 'http://siteurl/'
+end
