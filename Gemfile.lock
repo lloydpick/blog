@@ -37,6 +37,7 @@ GEM
     hoptoad_notifier (2.4.0)
       activesupport
       builder
+    hpricot (0.8.3)
     i18n (0.5.0)
     mail (2.2.14)
       activesupport (>= 2.3.6)
@@ -81,6 +82,7 @@ DEPENDENCIES
   acts_as_tree (= 0.1.1)
   haml (= 3.0.25)
   hoptoad_notifier (= 2.4.0)
+  hpricot (= 0.8.3)
   mysql (= 2.8.1)
   rails (= 3.0.3)
   rakismet (= 1.0.1)
