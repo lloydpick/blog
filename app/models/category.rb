@@ -24,7 +24,7 @@ class Category < ActiveRecord::Base
   validates_presence_of :name, :description
   validates_uniqueness_of :name, :permalink
 
-  named_scope :root, :conditions => { :parent_id => 0 }
+  scope :root, :conditions => { :parent_id => 0 }
 
   # Over-rides
   def to_param
