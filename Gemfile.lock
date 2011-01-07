@@ -28,6 +28,7 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    acts_as_tree (0.1.1)
     arel (2.0.6)
     builder (2.1.2)
     erubis (2.6.6)
@@ -70,16 +71,19 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    web-app-theme (0.6.3)
     will_paginate (2.3.15)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_tree (= 0.1.1)
   haml (= 3.0.25)
   hoptoad_notifier (= 2.4.0)
   mysql (= 2.8.1)
   rails (= 3.0.3)
   rakismet (= 1.0.1)
   tiny_mce (= 0.1.4)
+  web-app-theme (= 0.6.3)
   will_paginate (= 2.3.15)

@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/test_helper'
 
 require File.join(File.dirname(__FILE__), 'fixtures/page')
 
-class ActsAsSlugableTest < Test::Unit::TestCase
+class ActsAsSluggableTest < Test::Unit::TestCase
   def setup
     @allowable_characters = Regexp.new("^[A-Za-z0-9_-]+$")
   end
