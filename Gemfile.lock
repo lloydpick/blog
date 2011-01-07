@@ -83,7 +83,7 @@ DEPENDENCIES
   haml (= 3.0.25)
   hoptoad_notifier (= 2.4.0)
   hpricot (= 0.8.3)
-  mysql (= 2.8.1)
+  mysql
   rails (= 3.0.3)
   rakismet (= 1.0.1)
   tiny_mce (= 0.1.4)
