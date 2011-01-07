@@ -66,6 +66,7 @@ GEM
     rake (0.8.7)
     rakismet (1.0.1)
     thor (0.14.6)
+    tiny_mce (0.1.4)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
@@ -80,4 +81,5 @@ DEPENDENCIES
   mysql (= 2.8.1)
   rails (= 3.0.3)
   rakismet (= 1.0.1)
+  tiny_mce (= 0.1.4)
   will_paginate (= 2.3.15)
