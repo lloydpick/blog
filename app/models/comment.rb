@@ -18,12 +18,12 @@
 
 class Comment < ActiveRecord::Base
 
-  has_rakismet :user_ip => :user_ip
+  include Rakismet::Model
   belongs_to :post
 
-  named_scope :active, :conditions => [ "deleted_at IS NULL" ]
-  named_scope :order, :order => "created_at DESC"
-  named_scope :limit, lambda {
+  scope :active, :conditions => [ "deleted_at IS NULL" ]
+  scope :order, :order => "created_at DESC"
+  scope :limit, lambda {
     |num| { :limit => num }
   }
   

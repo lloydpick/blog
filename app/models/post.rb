@@ -13,17 +13,17 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :title, :permalink
 
   # Named Scopes
-  named_scope :published, {
+  scope :published, {
     :conditions => "publish_at <= CURRENT_TIMESTAMP",
     :order => "publish_at DESC"
   }
 
-  named_scope :draft, {
+  scope :draft, {
     :conditions => "publish_at => CURRENT_TIMESTAMP",
     :order => "publish_at ASC"
   }
 
-  named_scope :limit, lambda {
+  scope :limit, lambda {
     |num| { :limit => num }
   }
 
