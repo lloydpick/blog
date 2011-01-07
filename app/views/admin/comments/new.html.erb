@@ -8,7 +8,7 @@
   <div class="content">            
     <h2 class="title"><%= t("web-app-theme.new", :default => "New")%>  Comment</h2>
     <div class="inner">
-      <% form_for :comment, :url => admin_comments_path, :html => { :class => :form } do |f| -%>
+      <%= form_for :comment, :url => admin_comments_path, :html => { :class => :form } do |f| -%>
         <%= render :partial => "form", :locals => {:f => f} %>
       <% end -%>
     </div>
