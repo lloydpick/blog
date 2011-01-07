@@ -1,7 +1,7 @@
 
   <div class="group">
     <%= f.label :Parent, t("activerecord.attributes.category.parent_id", :default => "Parent"), :class => :label %>
-    <%= tree_select(Category.find(:all, :conditions => "parent_id = 0"), 'category', 'parent_id', current_object) %>
+    <%= tree_select(Category.all(:conditions => "parent_id = 0"), 'category', 'parent_id', current_object).html_safe %>
     <span class="description">What is this categories parent?</span>
   </div>
 
