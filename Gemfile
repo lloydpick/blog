@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 # base
 gem 'rails', '3.0.3'
-gem 'mysql'
+gem 'ruby-mysql'
 
 # extras
 gem 'hoptoad_notifier', '2.4.0'
