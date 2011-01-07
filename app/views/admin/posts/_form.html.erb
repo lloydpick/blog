@@ -18,7 +18,7 @@
 
   <div class="group">
     <%= f.label :Categories, t("activerecord.attributes.post.category_id", :default => "Categories"), :class => :label %>
-    <% for category in Category.find(:all) %>
+    <% for category in Category.all %>
       <%= check_box_tag "post[category_ids][]", category.id, @post.categories.include?(category) %>
       <%= category.name %>
     <% end %>
