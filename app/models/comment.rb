@@ -19,8 +19,14 @@
 class Comment < ActiveRecord::Base
 
   include Rakismet::Model
+  attr_accessor :referrer
   belongs_to :post
 
+  validates :author, :presence => true
+  validates :content, :presence => true
+  validates :post_id, :presence => true, :numericality => true
+
+  scope :not_spam, :conditions => { :spam => false }
   scope :active, :conditions => [ "deleted_at IS NULL" ]
   scope :order, :order => "created_at DESC"
   scope :limit, lambda {

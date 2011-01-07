@@ -26,6 +26,6 @@
   </div>
   <br />
   <div id="comments">
-    <%= render :partial => @post.comments.active.order %>
+    <%= render :partial => @post.comments.active.not_spam.order %>
   </div>
 </div>

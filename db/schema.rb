@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100109174225) do
+ActiveRecord::Schema.define(:version => 20110107173514) do
 
   create_table "categories", :force => true do |t|
     t.integer  "parent_id",                  :default => 0
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20100109174225) do
     t.datetime "updated_at"
     t.datetime "deleted_at"
     t.string   "user_agent",   :limit => 500
+    t.boolean  "spam",                        :default => true
   end
 
   create_table "links", :force => true do |t|
