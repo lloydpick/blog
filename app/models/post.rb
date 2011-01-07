@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   has_many :tags, :through => :tag_entry
   has_many :tag_entry
   has_many :comments
-  acts_as_slugable :source_column => :title, :slug_column => :permalink
+  acts_as_sluggable :source_column => :title, :slug_column => :permalink
 
   # Validations
   validates_presence_of :title, :content

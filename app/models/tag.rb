@@ -14,7 +14,7 @@
 class Tag < ActiveRecord::Base
 
   # Associations
-  acts_as_slugable :source_column => :name, :slug_column => :permalink
+  acts_as_sluggable :source_column => :name, :slug_column => :permalink
   has_many :tag_entry
   has_many :posts, :through => :tag_entry
 

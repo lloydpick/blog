@@ -16,7 +16,7 @@ class Category < ActiveRecord::Base
 
   # Associations
   acts_as_tree :order => "name"
-  acts_as_slugable :source_column => :name, :slug_column => :permalink
+  acts_as_sluggable :source_column => :name, :slug_column => :permalink
   has_many :category_entry
   has_many :posts, :through => :category_entry
 
