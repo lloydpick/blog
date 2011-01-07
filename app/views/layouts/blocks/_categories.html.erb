@@ -5,7 +5,7 @@
       <%= link_to category.name, category_path(category) %><br />
     <% else %>
       <br /><b><%= link_to category.name, category_path(category) %></b><br />
-      <%= category.children.collect {|c| link_to c.name, category_path(c)}.to_sentence %><br />
+      <%= category.children.collect {|c| link_to c.name, category_path(c)}.to_sentence.html_safe %><br />
     <% end %>
   <% end %>
 </div>
