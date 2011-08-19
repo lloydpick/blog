@@ -1,5 +1,10 @@
 gem 'capistrano-ext', '>=1.2.1'
 
+$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
+require "rvm/capistrano"                         # Load RVM's capistrano plugin.
+set :rvm_ruby_string, 'ruby-ee@blog'        # Or whatever env you want it to run in.
+set :rvm_type, :user
+
 set :use_sudo, false
 set :application, "blog"
 set :keep_releases, 5
@@ -14,10 +19,10 @@ default_run_options[:pty] = true
 set :branch, 'master'
 set :rails_env, 'production'
 
-set :user, "limi"
-server "andromeda.limi.co.uk", :app, :web, :db, :primary => true
+set :user, "deploy"
+server "balphagore.limi.co.uk", :app, :web, :db, :primary => true
 
-set(:deploy_to) { File.join("", "home", "limi", "domains", "blog.limi.co.uk") }
+set(:deploy_to) { File.join("", "home", "deploy", "blog.limi.co.uk") }
 
 task :after_update_code do
   run "rm -rf #{release_path}/config/database.yml"
